@@ -2,62 +2,52 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Entities;
+package viewModel;
 
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /**
  *
- * @author Toan
+ * @author Admin
  */
-@Entity
-@Table(name="KHACHHANG")
-public class KhachHang implements Serializable{
-    @Id
-    private String maKH;
+public class QLKhachHang {
+     private String maKH;
     
-    @Column
+
     private String tenKH;
     
-    @Column
+
     private String matKhau;
     
-    @Column
+
     private Boolean gioiTinh;
     
-    @Column
+
     private Date ngaySinh;
     
-    @Column
+
     private String SĐT;
     
-    @Column
+
     private String email;
     
-    @Column
+
     private String diaChi;
     
-    @ManyToOne
-    @JoinColumn(name="MANV")
-    private NhanVien maNV;
-    
-    @Column
     private Boolean trangThai;
     
-    @Column
+ 
     private int soLuongMuon;
 
-    public KhachHang() {
+    public QLKhachHang() {
     }
 
-    public KhachHang(String maKH, String tenKH, String matKhau, Boolean gioiTinh, Date ngaySinh, String SĐT, String email, String diaChi, NhanVien maNV, Boolean trangThai, int soLuongMuon) {
+    @Override
+    public String toString() {
+        return "QLKhachHang{" + "maKH=" + maKH + ", tenKH=" + tenKH + ", matKhau=" + matKhau + ", gioiTinh=" + gioiTinh + ", ngaySinh=" + ngaySinh + ", S\u0110T=" + SĐT + ", email=" + email + ", diaChi=" + diaChi + ", trangThai=" + trangThai + ", soLuongMuon=" + soLuongMuon + '}';
+    }
+
+    public QLKhachHang(String maKH, String tenKH, String matKhau, Boolean gioiTinh, Date ngaySinh, String SĐT, String email, String diaChi, Boolean trangThai, int soLuongMuon) {
         this.maKH = maKH;
         this.tenKH = tenKH;
         this.matKhau = matKhau;
@@ -66,13 +56,8 @@ public class KhachHang implements Serializable{
         this.SĐT = SĐT;
         this.email = email;
         this.diaChi = diaChi;
-        this.maNV = maNV;
         this.trangThai = trangThai;
         this.soLuongMuon = soLuongMuon;
-    }
-
-    public KhachHang(String maKH, String tenKH, String matKhau, Boolean gioiTinh, Date ngaySinh, String sđt, String email, String diaChi, Boolean trangThai, int soLuongMuon) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public String getMaKH() {
@@ -137,14 +122,6 @@ public class KhachHang implements Serializable{
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
-    }
-
-    public NhanVien getMaNV() {
-        return maNV;
-    }
-
-    public void setMaNV(NhanVien maNV) {
-        this.maNV = maNV;
     }
 
     public Boolean getTrangThai() {

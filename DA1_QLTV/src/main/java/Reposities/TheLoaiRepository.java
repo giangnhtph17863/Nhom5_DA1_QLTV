@@ -5,10 +5,10 @@
 package Reposities;
 
 import Entities.TheLoai;
-import Utillities.JpaUtils;
+import Utillities.HibernateUtil;
 import java.util.List;
-import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import org.hibernate.Session;
 
 /**
  *
@@ -19,11 +19,11 @@ public class TheLoaiRepository implements ITheLoaiRepository{
     @Override
     public List<TheLoai> findAll() {
         List<TheLoai> theLoai;
-        EntityManager em = JpaUtils.getEntityManager();
-        String hql = "SELECT c FROM THELOAI c";
-        TypedQuery<TheLoai> query = em.createQuery(hql, TheLoai.class);
+        try (Session session = HibernateUtil.getSessionFactory().openSession()){
+        String hql = "from TheLoai";
+        TypedQuery<TheLoai> query = session.createQuery(hql, TheLoai.class);
         theLoai = query.getResultList();
-        return theLoai;
     }
-    
+    return theLoai;
+    }
 }

@@ -45,7 +45,6 @@ public class SachService implements ISachService{
 
     @Override
     public SachModel createNewSach(SachModel sach) {
-        sach.setMaSach(null);
         var s = _iSachRepository.save(new Sach(sach.getMaSach(), sach.getNXB(), sach.getTenSach(),sach.getNoiDat(), sach.getGiaTien(), sach.getTacGia(),
                 sach.getNamXB(), sach.getSoLuong(), sach.getMaTL()));
         return new SachModel(s.getMaSach(), s.getNXB(), s.getTenSach(), s.getNoiDat(),

@@ -6,13 +6,10 @@ package Reposities;
 
 import Entities.Sach;
 import Utillities.HibernateUtil;
-import Utillities.JpaUtils;
 import java.util.List;
-import javax.persistence.EntityManager;
 import org.hibernate.Session;
 import javax.persistence.TypedQuery;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 /**
  *
@@ -24,14 +21,10 @@ public class SachRepository implements ISachRepository {
     public List<Sach> findAll() {
         List<Sach> sach;
         try ( Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "SELECT s FROM SACH s";
+            String hql = "from Sach";
             TypedQuery<Sach> query = session.createQuery(hql, Sach.class);
             sach = query.getResultList();
         }
-//    EntityManager em = JpaUtils.getEntityManager();
-//    String hql = "SELECT s FROM SACH s";
-//    TypedQuery<Sach> query = em.createQuery(hql, Sach.class);
-//    sach = query.getResultList();
         return sach;
     }
 

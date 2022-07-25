@@ -4,21 +4,17 @@
  */
 package services;
 
+import Entities.KhachHang;
 import java.util.List;
-import viewModel.QLKhachHang;
+import Model.QLKhachHang;
 
 /**
  *
  * @author Admin
  */
 public interface IManageQuanLiKhachHangService {
-     List<QLKhachHang> getKhachHangs(int position, int pageSize);
-    
-    QLKhachHang getProductById(long id);
-    
-    QLKhachHang createNewProduct(QLKhachHang khachHang);
-    
-    QLKhachHang updateProductById(QLKhachHang khachHang);
-  
-    long countAllProducts();
+     List<QLKhachHang> getqlKhachHangs();  
+    QLKhachHang getqlkhachhangById(String makh);  
+    QLKhachHang createNewkhachhhang(QLKhachHang khachHang);
+    QLKhachHang updatekhachhhangById(QLKhachHang khachHang);
 }

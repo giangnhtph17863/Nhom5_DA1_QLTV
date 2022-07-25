@@ -12,12 +12,12 @@ import java.util.List;
  * @author Admin
  */
 public interface IQuanLiKhachHangRepository {
-     List<KhachHang> findAll(int position, int pageSize);
+     List<KhachHang> findAll();
     
-    KhachHang findById(long id);
+    KhachHang findById(String makh);
     
     KhachHang save(KhachHang khachHang);
     
-
-    long totalCount();
+KhachHang findbyName(String name);
+  
 }

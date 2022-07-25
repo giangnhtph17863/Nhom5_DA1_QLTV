@@ -71,10 +71,6 @@ public class KhachHang implements Serializable{
         this.soLuongMuon = soLuongMuon;
     }
 
-    public KhachHang(String maKH, String tenKH, String matKhau, Boolean gioiTinh, Date ngaySinh, String sđt, String email, String diaChi, Boolean trangThai, int soLuongMuon) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     public String getMaKH() {
         return maKH;
     }

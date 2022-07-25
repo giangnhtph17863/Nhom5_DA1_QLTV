@@ -18,31 +18,6 @@ import org.hibernate.Transaction;
 public class QuanLiKhachHangRepository implements IQuanLiKhachHangRepository{
 
     @Override
-    public List<KhachHang> findAll(int position, int pageSize) {
-         List<KhachHang> khachHangs;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "SELECT p FROM KhachHang p";
-            TypedQuery<KhachHang> query = session.createQuery(hql, KhachHang.class);
-            query.setFirstResult(position);
-            query.setMaxResults(pageSize);
-            khachHangs = query.getResultList();
-        }
-        return khachHangs;
-         }
-
-    @Override
-    public KhachHang findById(long id) {
-         KhachHang khachHang;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "SELECT p FROM KhachHang p WHERE p.id = :id";
-            TypedQuery<KhachHang> query = session.createQuery(hql, KhachHang.class);
-            query.setParameter("id", id);
-            khachHang = query.getSingleResult();
-        }
-        return khachHang;
-     }
-
-    @Override
     public KhachHang save(KhachHang khachHang) {
           try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction trans = session.getTransaction();
@@ -60,15 +35,38 @@ public class QuanLiKhachHangRepository implements IQuanLiKhachHangRepository{
         }
      }
 
+
     @Override
-    public long totalCount() {
-        long total = 0;
+    public List<KhachHang> findAll() {
+       List<KhachHang> khachHangs;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String statement = "SELECT COUNT(p.id) FROM KhachHang p";
-            TypedQuery<Long> query = session.createQuery(statement, Long.class);
-            total = query.getSingleResult();
+            String hql = "SELECT p FROM KhachHang p";
+            TypedQuery<KhachHang> query = session.createQuery(hql, KhachHang.class);
+            khachHangs = query.getResultList();
         }
-        return total;
-     }
+        return khachHangs; }
+
+    @Override
+    public KhachHang findById(String makh) {
+     KhachHang khachHang;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String hql = "SELECT p FROM KhachHang p WHERE p.maKH = :maKH";
+            TypedQuery<KhachHang> query = session.createQuery(hql, KhachHang.class);
+            query.setParameter("maKH", makh);
+            khachHang = query.getSingleResult();
+        }
+        return khachHang;   }
+
+    @Override
+    public KhachHang findbyName(String name) {
+   KhachHang khachhang;
+   try (Session session = HibernateUtil.getSessionFactory().openSession()){
+            String hql = "SELECT s FROM KHACHHANG s WHERE s.tenKH = :tenKH";
+            TypedQuery<KhachHang> query = session.createQuery(hql, KhachHang.class);
+            query.setParameter("maSach", name);
+            khachhang = query.getSingleResult();
+        }
+        return khachhang;
+    }
     
 }

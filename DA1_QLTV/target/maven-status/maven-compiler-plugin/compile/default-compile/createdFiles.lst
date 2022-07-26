@@ -1,5 +1,5 @@
 Entities\Sach.class
-Utillities\Migrator.class
 Entities\NhanVien.class
 Entities\KhachHang.class
+Utillities\Migrator.class
 Entities\TheLoai.class

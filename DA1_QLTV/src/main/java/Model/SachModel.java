@@ -2,56 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Entities;
+package Model;
 
-import java.io.Serializable;
+import Entities.TheLoai;
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 /**
  *
  * @author Toan
  */
-@Entity
-@Table(name="Sach")
-public class Sach implements Serializable{
-    @Id
+public class SachModel {
     private String maSach;
-    
-    @Column
     private String NXB;
-    
-    @Column
     private String tenSach;
-    
-    @Column
     private String noiDat;
-    
-    @Column
     private Double giaTien;
-    
-    @Column
     private String tacGia;
-    
-    @Column
     private Date namXB;
-    
-    @Column
     private int soLuong;
-    
-    @ManyToOne
-    @JoinColumn(name="id_TL")
     private TheLoai maTL;
 
-    public Sach() {
+    public SachModel() {
     }
 
-    public Sach(String maSach, String NXB, String tenSach, String noiDat, Double giaTien, String tacGia, Date namXB, int soLuong, TheLoai maTL) {
+    public SachModel(String maSach, String NXB, String tenSach, String noiDat, Double giaTien, String tacGia, Date namXB, int soLuong, TheLoai maTL) {
         this.maSach = maSach;
         this.NXB = NXB;
         this.tenSach = tenSach;
@@ -134,6 +108,6 @@ public class Sach implements Serializable{
     public void setMaTL(TheLoai maTL) {
         this.maTL = maTL;
     }
-
-   
+    
+    
 }

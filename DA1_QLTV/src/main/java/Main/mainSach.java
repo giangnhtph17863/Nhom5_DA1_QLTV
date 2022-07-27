@@ -8,7 +8,7 @@ import Views.JFrmQLSach;
 
 /**
  *
- * @author Toan
+ * @author Toan d
  */
 public class mainSach {
     public static void main(String[] args) {

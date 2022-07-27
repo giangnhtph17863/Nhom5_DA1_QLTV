@@ -4,6 +4,7 @@
  */
 package Service;
 
+import Entities.Sach;
 import Model.SachModel;
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface ISachService {
     List<SachModel> getSach();
     SachModel getSachByID(String maSach);
     SachModel createNewSach(SachModel sach);
-    SachModel updateSachById(SachModel sach);;
+    SachModel updateSachById(SachModel sach);
 }

@@ -58,5 +58,5 @@ public class SachService implements ISachService{
         return new SachModel(s.getMaSach(), s.getNXB(), s.getTenSach(), s.getNoiDat(),
                 s.getGiaTien(), s.getTacGia(), s.getNamXB(), s.getSoLuong(), s.getMaTL());
     }
-    
+
 }

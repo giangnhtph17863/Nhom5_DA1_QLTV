@@ -5,9 +5,16 @@
 package Entities;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -15,36 +22,56 @@ import javax.persistence.Table;
  * @author Toan
  */
 @Entity
-@Table(name= "THELOAI")
+@Table(name= "TheLoai")
 public class TheLoai implements Serializable{
+    
     @Id
-    private String maTL;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long maTL;
     
     @Column
     private String tenTL;
+    
+    @OneToMany(mappedBy = "maTL")
+    List<Sach> sachs;
+    
 
     public TheLoai() {
     }
 
-    public TheLoai(String maTL, String tenTL) {
+    public TheLoai(Long maTL, String tenTL, List<Sach> sachs) {
         this.maTL = maTL;
         this.tenTL = tenTL;
+        this.sachs = sachs;
     }
 
-    public String getMaTL() {
+    public Long getMaTL() {
         return maTL;
     }
 
-    public void setMaTL(String maTL) {
+    public void setMaTL(Long maTL) {
         this.maTL = maTL;
     }
-
+    
     public String getTenTL() {
         return tenTL;
     }
 
     public void setTenTL(String tenTL) {
         this.tenTL = tenTL;
+    }
+
+    public List<Sach> getSachs() {
+        return sachs;
+    }
+
+    public void setSachs(List<Sach> sachs) {
+        this.sachs = sachs;
+    }
+
+    @Override
+    public String toString() {
+        return tenTL;
     }
     
     

@@ -8,6 +8,8 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -18,10 +20,11 @@ import javax.persistence.Table;
  * @author Toan
  */
 @Entity
-@Table(name = "PHIEUMUON")
+@Table(name = "PhieuMuon")
 public class PhieuMuon implements Serializable{
     @Id
-    private String maPM;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer maPM;
     
     @Column
     private Date ngayMuon;
@@ -46,7 +49,7 @@ public class PhieuMuon implements Serializable{
     public PhieuMuon() {
     }
 
-    public PhieuMuon(String maPM, Date ngayMuon, Date ngayTra, Double tienCoc, String trangThai, KhachHang khachHang, NhanVien nhanVien) {
+    public PhieuMuon(Integer maPM, Date ngayMuon, Date ngayTra, Double tienCoc, String trangThai, KhachHang khachHang, NhanVien nhanVien) {
         this.maPM = maPM;
         this.ngayMuon = ngayMuon;
         this.ngayTra = ngayTra;
@@ -56,11 +59,11 @@ public class PhieuMuon implements Serializable{
         this.nhanVien = nhanVien;
     }
 
-    public String getMaPM() {
+    public Integer getMaPM() {
         return maPM;
     }
 
-    public void setMaPM(String maPM) {
+    public void setMaPM(Integer maPM) {
         this.maPM = maPM;
     }
 

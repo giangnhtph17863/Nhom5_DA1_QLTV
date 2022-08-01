@@ -158,6 +158,11 @@ public class KhachHang implements Serializable{
     public void setSoLuongMuon(int soLuongMuon) {
         this.soLuongMuon = soLuongMuon;
     }
+
+    @Override
+    public String toString() {
+        return "KhachHang{" + "maKH=" + maKH + ", tenKH=" + tenKH + ", matKhau=" + matKhau + ", gioiTinh=" + gioiTinh + ", ngaySinh=" + ngaySinh + ", S\u0110T=" + SĐT + ", email=" + email + ", diaChi=" + diaChi + ", maNV=" + maNV + ", trangThai=" + trangThai + ", soLuongMuon=" + soLuongMuon + '}';
+    }
     
     
 }

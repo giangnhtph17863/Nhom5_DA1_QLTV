@@ -64,6 +64,8 @@ public class NhanVien implements Serializable{
         this.vaiTro = vaiTro;
     }
 
+
+
     public String getMaNV() {
         return maNV;
     }

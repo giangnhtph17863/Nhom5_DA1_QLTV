@@ -7,7 +7,7 @@ package view.kh;
 
 import view.login.form_login_DoiMatKhau;
 import view.login.form_login_DangNhap;
-import helper.XImages;
+
 import java.awt.Color;
 
 import java.awt.event.ActionEvent;
@@ -30,22 +30,22 @@ public class form_khachhang_MainFormKhachHang extends javax.swing.JFrame {
         setColor(mniMuonTraSach);
         setColor(mniDx);
         setColor(mniDoiMk);
-        init();
+       // init();
     }
-
-    void init() {
-        setIconImage(XImages.getAppIcon());
-        setLocationRelativeTo(null);
-        setTitle("Thư Viện Đại Học Hà Nội");
-        new Timer(1000, new ActionListener() {
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy - hh:mm:ss - a");
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                lblTime.setText(format.format(new Date()));
-            }
-        }).start();
-    }
+//
+//    void init() {
+//        setIconImage(XImages.getAppIcon());
+//        setLocationRelativeTo(null);
+//        setTitle("Thư Viện Đại Học Hà Nội");
+//        new Timer(1000, new ActionListener() {
+//            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy - hh:mm:ss - a");
+//
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                lblTime.setText(format.format(new Date()));
+//            }
+//        }).start();
+//    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

@@ -12,7 +12,7 @@ import java.util.List;
  * @author Admin
  */
 public interface INhanVienRepository {
-     List<NhanVien> findAll();
+    List<NhanVien> findAll();
     
     NhanVien findById(String maNv);
     

@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author Toan
  */
 @Entity
-@Table(name="KhachHang")
+@Table(name="KHACHHANG")
 public class KhachHang implements Serializable{
     @Id
     private String maKH;
@@ -45,7 +45,7 @@ public class KhachHang implements Serializable{
     private String diaChi;
     
     @ManyToOne
-    @JoinColumn(name="maNV")
+    @JoinColumn(name="MANV")
     private NhanVien maNV;
     
     @Column

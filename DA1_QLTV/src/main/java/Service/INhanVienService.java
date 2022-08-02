@@ -5,7 +5,7 @@
 package Service;
 
 import Entities.NhanVien;
-import Model.NhanVienModel;
+import Models.NhanVienModels;
 import java.util.List;
 
 /**
@@ -13,8 +13,8 @@ import java.util.List;
  * @author Admin
  */
 public interface INhanVienService {
-    List<NhanVien> getNhanVien();
-    NhanVienModel getNhanVienByID(String maNhanVien);
-    NhanVienModel createNewNhanVien(NhanVienModel nv);
-    NhanVienModel updateNhanVienById(NhanVienModel nv);;
+     List<NhanVienModels> getNhanVien();
+    NhanVienModels getNhanVienByID(String maNhanVien);
+    NhanVienModels createNewNhanVien(NhanVienModels nv);
+    NhanVienModels updateNhanVienById(NhanVienModels nv);
 }

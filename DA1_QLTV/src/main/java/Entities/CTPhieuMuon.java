@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author Toan
  */
 @Entity
-@Table(name = "CTPhieuMuon")
+@Table(name = "CTPHIEUMUON")
 public class CTPhieuMuon implements Serializable{
     @Id
     @ManyToOne

@@ -4,7 +4,6 @@
  */
 package Reposities;
 
-
 import Entities.KhachHang;
 import java.util.List;
 
@@ -13,7 +12,7 @@ import java.util.List;
  * @author Admin
  */
 public interface IKhachHangRepository {
-    List<KhachHang> findAll();
+     List<KhachHang> findAll();
     
      KhachHang save(KhachHang kh);
    

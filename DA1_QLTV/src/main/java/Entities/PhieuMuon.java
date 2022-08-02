@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author Toan
  */
 @Entity
-@Table(name = "PhieuMuon")
+@Table(name = "PHIEUMUON")
 public class PhieuMuon implements Serializable{
     @Id
     private String maPM;

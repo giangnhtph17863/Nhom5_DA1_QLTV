@@ -5,7 +5,6 @@
 package Reposities;
 
 import Entities.PhieuMuon;
-import Model.PhieuMuonModel;
 import java.util.List;
 
 /**
@@ -20,4 +19,6 @@ public interface IPhieuMuonRepository {
     PhieuMuon save(PhieuMuon phieuMuon);
     
     PhieuMuon findbyName(String name);
+    
+    long totalCount();
 }

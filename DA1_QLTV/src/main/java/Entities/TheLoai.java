@@ -15,7 +15,7 @@ import javax.persistence.Table;
  * @author Toan
  */
 @Entity
-@Table(name= "TheLoai")
+@Table(name= "THELOAI")
 public class TheLoai implements Serializable{
     @Id
     private String maTL;
@@ -35,6 +35,11 @@ public class TheLoai implements Serializable{
         return maTL;
     }
 
+    
+    
+    
+    
+    
     public void setMaTL(String maTL) {
         this.maTL = maTL;
     }

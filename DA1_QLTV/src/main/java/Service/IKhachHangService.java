@@ -5,7 +5,7 @@
 package Service;
 
 import Entities.KhachHang;
-import Model.KhachHangModel;
+import Models.KhachHangModels;
 import java.util.List;
 
 /**
@@ -13,8 +13,8 @@ import java.util.List;
  * @author Admin
  */
 public interface IKhachHangService {
-    List<KhachHang> getKhachHang();
-    KhachHang getKhachHangByID(String maKhachHang);
-    KhachHang createNewkhachHang(KhachHang nv);
-    KhachHang updateKhachHangById(KhachHang nv);;
+    List<KhachHangModels> getKhachHang();
+    KhachHangModels getKhachHangByID(String maKhachHang);
+    KhachHangModels createNewkhachHang(KhachHangModels kh);
+    KhachHangModels updateKhachHangById(KhachHangModels kh);;
 }

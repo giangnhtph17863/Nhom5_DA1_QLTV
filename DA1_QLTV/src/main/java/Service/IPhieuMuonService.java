@@ -4,8 +4,7 @@
  */
 package Service;
 
-import Entities.PhieuMuon;
-import Model.PhieuMuonModel;
+import Models.PhieuMuonModels;
 import java.util.List;
 
 /**
@@ -13,8 +12,9 @@ import java.util.List;
  * @author Admin
  */
 public interface IPhieuMuonService {
-    List<PhieuMuonModel> getPhieuMuon();
-    PhieuMuonModel getPhieuMuonByID(String maPhieuMuon);
-    PhieuMuonModel createNewPhieumuon(PhieuMuonModel phieumuon);
-    PhieuMuonModel updatePhieumuonById(PhieuMuonModel phieumuon);;
+    List<PhieuMuonModels> getPhieuMuon(int position, int pageSize);
+    PhieuMuonModels getPhieuMuonByID(String maPhieuMuon);
+    PhieuMuonModels createNewPhieumuon(PhieuMuonModels phieumuon);
+    PhieuMuonModels updatePhieumuonById(PhieuMuonModels phieumuon);
+    long countAllProducts();
 }

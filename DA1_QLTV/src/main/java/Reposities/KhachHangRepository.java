@@ -5,7 +5,6 @@
 package Reposities;
 
 import Entities.KhachHang;
-import Entities.TheLoai;
 import Utillities.HibernateUtil;
 import java.util.List;
 import javax.persistence.TypedQuery;
@@ -21,7 +20,7 @@ public class KhachHangRepository implements IKhachHangRepository{
     public List<KhachHang> findAll() {
         List<KhachHang> khachhang;
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
-        String hql = "from KhachHang";
+        String hql = "select p from KhachHang p";
         TypedQuery<KhachHang> query = session.createQuery(hql, KhachHang.class);
         khachhang = query.getResultList();
     }
@@ -44,4 +43,5 @@ public class KhachHangRepository implements IKhachHangRepository{
     }
         return  khachhang;
     }
+    
 }

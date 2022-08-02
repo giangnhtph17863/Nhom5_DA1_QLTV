@@ -5,11 +5,10 @@
 package Reposities;
 
 import Entities.PhieuMuon;
-import Model.PhieuMuonModel;
-import java.util.List;
 import Utillities.HibernateUtil;
-import org.hibernate.Session;
+import java.util.List;
 import javax.persistence.TypedQuery;
+import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 /**
@@ -22,7 +21,7 @@ public class PhieuMuonRepository implements IPhieuMuonRepository{
     public List<PhieuMuon> findAll() {
         List<PhieuMuon> phieumuon;
         try ( Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "from PhieuMuon";
+            String hql = "select p from PhieuMuon p";
             TypedQuery<PhieuMuon> query = session.createQuery(hql, PhieuMuon.class);
             phieumuon = query.getResultList();
         }
@@ -30,12 +29,12 @@ public class PhieuMuonRepository implements IPhieuMuonRepository{
     }
 
     @Override
-    public PhieuMuon findById(String maSach) {
+    public PhieuMuon findById(String MaPhieuMuon) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public PhieuMuon  save(PhieuMuon phieuMuon) {
+    public PhieuMuon save(PhieuMuon phieuMuon) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
             Transaction trans = session.getTransaction();
             trans.begin();
@@ -55,6 +54,17 @@ public class PhieuMuonRepository implements IPhieuMuonRepository{
     @Override
     public PhieuMuon findbyName(String name) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public long totalCount() {
+        long total = 0;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String statement = "SELECT COUNT(p.id) FROM PhieuMuon p";
+            TypedQuery<Long> query = session.createQuery(statement, Long.class);
+            total = query.getSingleResult();
+        }
+        return total;
     }
     
 }

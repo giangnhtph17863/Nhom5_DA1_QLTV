@@ -5,7 +5,6 @@
 package Reposities;
 
 import Entities.NhanVien;
-import Entities.Sach;
 import Utillities.HibernateUtil;
 import java.util.List;
 import javax.persistence.TypedQuery;
@@ -19,9 +18,9 @@ public class NhanVienRepository implements INhanVienRepository{
 
     @Override
     public List<NhanVien> findAll() {
-         List<NhanVien> nv;
+        List<NhanVien> nv;
         try ( Session session = HibernateUtil.getSessionFactory().openSession()) {
-            String hql = "from NhanVien ";
+            String hql = " select p from NhanVien p";
             TypedQuery<NhanVien> query = session.createQuery(hql, NhanVien.class);
             nv = query.getResultList();
         }
@@ -49,6 +48,5 @@ public class NhanVienRepository implements INhanVienRepository{
     }
         return  nv;
     }
-    
     
 }

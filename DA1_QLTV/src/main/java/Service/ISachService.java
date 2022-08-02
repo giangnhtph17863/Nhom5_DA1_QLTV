@@ -4,6 +4,7 @@
  */
 package Service;
 
+
 import Model.SachModel;
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface ISachService {
     SachModel createNewSach(SachModel sach);
     
     SachModel updateSachById(SachModel sach);;
+
+   
 }

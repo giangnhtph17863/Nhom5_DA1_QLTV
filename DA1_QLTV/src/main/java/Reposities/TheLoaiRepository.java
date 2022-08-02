@@ -14,16 +14,20 @@ import org.hibernate.Session;
  *
  * @author Toan
  */
-public class TheLoaiRepository implements ITheLoaiRepository{
+
+public class TheLoaiRepository implements ITheLoaiRepository {
+ main
 
     @Override
     public List<TheLoai> findAll() {
         List<TheLoai> theLoai;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()){
-        String hql = "from TheLoai";
-        TypedQuery<TheLoai> query = session.createQuery(hql, TheLoai.class);
-        theLoai = query.getResultList();
-    }
-    return theLoai;
+
+        try ( Session session = HibernateUtil.getSessionFactory().openSession()) {
+            String hql = "SELECT t FROM TheLoai t";
+            TypedQuery<TheLoai> query = session.createQuery(hql, TheLoai.class);
+            theLoai = query.getResultList();
+        }
+        return theLoai;
+ main
     }
 }

@@ -4,7 +4,6 @@
  */
 package Utillities;
 
-import java.math.BigDecimal;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

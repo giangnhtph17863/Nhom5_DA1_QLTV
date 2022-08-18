@@ -30,8 +30,14 @@ public class TheLoai implements Serializable{
     @Column
     private String tenTL;
 
-    @OneToMany(mappedBy = "maTL")
-    private List<Sach> sachs;
+    public TheLoai() {
+    }
+
+    public TheLoai(Long maTL, String tenTL) {
+        this.maTL = maTL;
+        this.tenTL = tenTL;
+    }
+    
     
 
     public Long getMaTL() {
@@ -48,14 +54,6 @@ public class TheLoai implements Serializable{
 
     public void setTenTL(String tenTL) {
         this.tenTL = tenTL;
-    }
-
-    public List<Sach> getSachs() {
-        return sachs;
-    }
-
-    public void setSachs(List<Sach> sachs) {
-        this.sachs = sachs;
     }
 
     @Override

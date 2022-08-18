@@ -22,7 +22,7 @@ public class PhieuTra implements Serializable{
     @Id
     @ManyToOne
     @JoinColumn(name="maPM")
-    private PhieuMuon phieuMuon;
+    private PhieuMuon maPM;
     
     @Id
     @ManyToOne
@@ -37,22 +37,37 @@ public class PhieuTra implements Serializable{
 
     public PhieuTra() {
     }
-
-    public PhieuTra(PhieuMuon phieuMuon, Sach maSach, Double soTienCoc, Double tienPhat) {
-        this.phieuMuon = phieuMuon;
+    
+     public float getTienHoanTra() {
+        float soTienHT = 0;
+        if (tienPhat < soTienCoc) {
+            return soTienHT = (float) (soTienCoc - tienPhat);
+        }
+        return 0;
+    }
+    
+    public float getTienThanhToan() {
+        float soTienTT = 0;
+        if (tienPhat > soTienCoc) {
+            return soTienTT = (float) (tienPhat - soTienCoc);
+        }
+        return 0;
+    }
+    public PhieuTra(PhieuMuon maPM, Sach maSach, Double soTienCoc, Double tienPhat) {
+        this.maPM = maPM;
         this.maSach = maSach;
         this.soTienCoc = soTienCoc;
         this.tienPhat = tienPhat;
     }
 
-    public PhieuMuon getPhieuMuon() {
-        return phieuMuon;
+    public PhieuMuon getMaPM() {
+        return maPM;
     }
 
-    public void setPhieuMuon(PhieuMuon phieuMuon) {
-        this.phieuMuon = phieuMuon;
+    public void setMaPM(PhieuMuon maPM) {
+        this.maPM = maPM;
     }
-
+    
     public Sach getMaSach() {
         return maSach;
     }

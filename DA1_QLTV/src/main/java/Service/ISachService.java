@@ -18,4 +18,6 @@ public interface ISachService {
     SachModel createNewSach(SachModel sach);
     SachModel updateSachById(SachModel sach);
     SachModel getSachByName(String tenSach);
+    List<SachModel> search(String temp);
+    List<SachModel> getLstSach();
 }

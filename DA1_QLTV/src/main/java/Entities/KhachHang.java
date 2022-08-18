@@ -158,6 +158,11 @@ public class KhachHang implements Serializable{
     public void setSoLuongMuon(int soLuongMuon) {
         this.soLuongMuon = soLuongMuon;
     }
+
+    @Override
+    public String toString() {
+        return maKH;
+    }
     
     
 }

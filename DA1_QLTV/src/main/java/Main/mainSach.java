@@ -5,13 +5,13 @@
 package Main;
 
 import Views.JFrmQLSach;
-
+import Views.JFrmThemPhieuMuon;
 /**
  *
  * @author Toan 
  */
 public class mainSach {
     public static void main(String[] args) {
-        new JFrmQLSach().setVisible(true);
+        new JFrmThemPhieuMuon().setVisible(true);
     }
 }

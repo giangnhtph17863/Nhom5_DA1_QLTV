@@ -78,4 +78,8 @@ public class XDate {
         cal.add(Calendar.DAY_OF_MONTH, days);
         return cal.getTime();
     }
+
+    public static String[] toString(Date ngayTra, Double tienCoc, String trangThai) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

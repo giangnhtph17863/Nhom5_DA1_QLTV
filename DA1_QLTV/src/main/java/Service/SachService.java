@@ -6,8 +6,8 @@ package Service;
 
 import Entities.Sach;
 import Model.SachModel;
-import Reposities.ISachRepository;
-import Reposities.SachRepository;
+import Repositories.ISachRepository;
+import Repositories.SachRepository;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,5 +65,24 @@ public class SachService implements ISachService{
         return new SachModel(s.getMaSach(), s.getNXB(), s.getTenSach(), s.getNoiDat(),
                 s.getGiaTien(), s.getTacGia(), s.getNamXB(), s.getSoLuong(), s.getMaTL());
     }
+    @Override
+    public List<SachModel> getLstSach() {
+        return _lstSachModel;
+    }
+
+    @Override
+    public List<SachModel> search(String temp) {
+         List<SachModel> lstTemp = new ArrayList<>();
+        for (SachModel s : _lstSachModel) {
+            if (s.getMaSach().toLowerCase().contains(temp.toLowerCase()) ||
+                    s.getTenSach().toLowerCase().contains(temp.toLowerCase())
+                    || s.getTacGia().toLowerCase().contains(temp.toLowerCase())) {
+                lstTemp.add(s);
+            }
+        }
+        return lstTemp;
+    }
+
+    
 
 }

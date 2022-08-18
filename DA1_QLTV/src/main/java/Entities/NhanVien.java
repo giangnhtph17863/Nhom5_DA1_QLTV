@@ -144,5 +144,9 @@ public class NhanVien implements Serializable{
         this.vaiTro = vaiTro;
     }
     
+    @Override
+    public String toString() {
+        return maNV;
+    }
     
 }

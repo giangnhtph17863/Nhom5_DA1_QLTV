@@ -5,6 +5,7 @@
 package Service;
 
 import Entities.TheLoai;
+import Model.TheLoaiModel;
 import java.util.List;
 
 /**
@@ -12,5 +13,8 @@ import java.util.List;
  * @author Toan
  */
 public interface ITheLoaiService {
-    List<TheLoai> getAllTheLoai();
+    List<TheLoai> lstTheLoai();
+    List<TheLoaiModel> getAllTheLoai();
+    TheLoaiModel createNewTheLoai(TheLoaiModel theLoai);
+    TheLoaiModel updateTheLoaiById(TheLoaiModel theLoai);
 }
